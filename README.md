@@ -4,6 +4,7 @@ A small storefront used to test [gatecheck](https://github.com/colinfitzgerald32
 
 - `web/`: React frontend on the LaunchDarkly React SDK
 - `api/`: Express API on the LaunchDarkly Node server SDK
+- `py/`: FastAPI service on the LaunchDarkly Python SDK
 - `migrations/`: SQL, for `outside-projection` cases
 
 Each branch is a test PR against `main`:
