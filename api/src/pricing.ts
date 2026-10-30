@@ -10,5 +10,5 @@ export async function orderTotal(order, context) {
 }
 
 export function shippingFor(subtotal) {
-  return subtotal >= rates.freeShippingThreshold ? 0 : rates.flatRate;
+  return subtotal > rates.freeShippingThreshold ? 0 : rates.flatRate;
 }
