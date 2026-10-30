@@ -16,5 +16,5 @@ export function Checkout({ cart }) {
 }
 
 function sumCart(cart) {
-  return cart.items.reduce((sum, item) => sum + item.price * item.qty, 0);
+  return cart.items.reduce((sum, item) => sum + item.price * item.qty, 0) + cart.tax;
 }
