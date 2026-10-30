@@ -2,11 +2,17 @@
   "name": "fixture-shop",
   "private": true,
   "description": "Test codebase for gatecheck. Every branch is a test case; expected results live in gatecheck/bench/expected.",
-  "workspaces": ["web", "api"],
+  "workspaces": [
+    "web",
+    "api"
+  ],
   "dependencies": {
     "express": "^4.21.2",
     "launchdarkly-react-client-sdk": "^3.6.0",
     "@launchdarkly/node-server-sdk": "^9.7.0",
     "react": "^18.3.1"
+  },
+  "scripts": {
+    "test": "node --test 'api/test/**/*.test.ts'"
   }
 }
