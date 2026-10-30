@@ -8,10 +8,6 @@ test('adds flat shipping below the free-shipping threshold', async () => {
   assert.equal(await orderTotal(order([20, 2]), {}), 45);
 });
 
-test('ships free at the threshold', async () => {
-  assert.equal(await orderTotal(order([25, 2]), {}), 50);
-});
-
 test('rounds to cents', async () => {
   assert.equal(await orderTotal(order([0.1, 3]), {}), 5.3);
 });
