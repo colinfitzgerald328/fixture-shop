@@ -1,6 +1,6 @@
 # fixture-shop
 
-A small storefront used to test [gatecheck](../gatecheck). It isn't meant to run.
+A small storefront used to test [gatecheck](https://github.com/colinfitzgerald328/gatecheck). It isn't meant to run.
 
 - `web/`: React frontend on the LaunchDarkly React SDK
 - `api/`: Express API on the LaunchDarkly Node server SDK
