@@ -14,3 +14,5 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
       - uses: colinfitzgerald328/gatecheck@main
+        with:
+          test-command: node --test 'api/test/**/*.test.ts'
