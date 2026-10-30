@@ -1,5 +1,7 @@
 import { app } from '../app';
 import { db } from '../db';
+import { ld } from '../ld';
+import { trackingFor } from '../services/tracking';
 
 export interface Order {
   id: string;
@@ -18,5 +20,9 @@ async function listOrders(req, res) {
 async function getOrder(req, res) {
   const order = await db.orders.find(req.params.id);
   if (!order) return res.status(404).json({ error: 'not_found' });
+  if (await ld.variation('order-tracking', req.ldContext, false)) {
+    const tracking = await trackingFor(order.id);
+    return res.json({ id: order.id, total: order.total, status: order.status, tracking });
+  }
   res.json({ id: order.id, total: order.total, status: order.status });
 }
