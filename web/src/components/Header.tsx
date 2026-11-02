@@ -1,11 +1,12 @@
 import { useFlags } from 'launchdarkly-react-client-sdk';
+import { SearchAutocomplete } from './SearchAutocomplete';
 
 export function Header({ user }) {
-  const { searchBar } = useFlags();
+  const { searchBar, searchAutocomplete } = useFlags();
   return (
     <header>
       <Logo />
-      {searchBar && <Search />}
+      {searchBar && (searchAutocomplete ? <SearchAutocomplete /> : <Search />)}
       <Account name={user.name} />
     </header>
   );
